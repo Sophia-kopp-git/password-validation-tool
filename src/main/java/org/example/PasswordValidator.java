@@ -69,7 +69,7 @@ public class PasswordValidator {
     }
 
     public static boolean containsSpecialChar(String password) {
-        char[] specialCharList = {'!'};
+        char[] specialCharList = {'!','!','@','#','$','%','^','&','*','(',')','-','_','+','=','?','.',',',';',':'};
         for (char specialChar : specialCharList) {
 
             if (password.contains("" + specialChar)) {
