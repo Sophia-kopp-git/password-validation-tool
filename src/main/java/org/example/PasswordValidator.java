@@ -63,10 +63,10 @@ public class PasswordValidator {
     }
 
     public static boolean containsSpecialChar(String password) {
-        char[] specialCharList = {'!', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '?', '.', ',', ';', ':'};
-        for (char specialChar : specialCharList) {
+        String[] specialCharList = {"!", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "?", ".", ",", ";", ":"};
+        for (String specialChar : specialCharList) {
 
-            if (password.contains("" + specialChar)) {
+            if (password.contains(specialChar)) {
                 return true;
             }
         }
