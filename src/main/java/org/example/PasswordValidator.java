@@ -2,9 +2,11 @@ package org.example;
 
 public class PasswordValidator {
     public static boolean isValidPassword(String password) {
-        if (password == null || password.equals("")) {
+        password = password == null ? "" : password.trim();
+        if (password.isEmpty()) {
             return false;
         }
+
         if (hasMinLength(password) &&
                 containsDigit(password) &&
                 containsUpperAndLowerCase(password) &&
@@ -23,18 +25,10 @@ public class PasswordValidator {
 
     public static boolean containsDigit(String password) {
         boolean hasDigit = false;
-        for (int i = 0; i < password.length(); i++) {
-            if (password.charAt(i) == '1' ||
-                    password.charAt(i) == '2' ||
-                    password.charAt(i) == '3' ||
-                    password.charAt(i) == '4' ||
-                    password.charAt(i) == '5' ||
-                    password.charAt(i) == '6' ||
-                    password.charAt(i) == '7' ||
-                    password.charAt(i) == '8' ||
-                    password.charAt(i) == '9' ||
-                    password.charAt(i) == '0'
-            ) {
+        char[] charArray = password.toCharArray();
+
+        for (char c : charArray) {
+            if (Character.isDigit(c)) {
                 hasDigit = true;
                 break;
             }
@@ -69,7 +63,7 @@ public class PasswordValidator {
     }
 
     public static boolean containsSpecialChar(String password) {
-        char[] specialCharList = {'!','!','@','#','$','%','^','&','*','(',')','-','_','+','=','?','.',',',';',':'};
+        char[] specialCharList = {'!', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '?', '.', ',', ';', ':'};
         for (char specialChar : specialCharList) {
 
             if (password.contains("" + specialChar)) {
