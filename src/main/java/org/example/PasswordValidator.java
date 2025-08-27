@@ -52,9 +52,9 @@ public class PasswordValidator {
     }
 
     public static boolean isCommonPassword(String password) {
-        String[] commonPasswordList = {"password",
-                "Passwort1",
-                "Passwort9",
+        String[] commonPasswordList = {"Password",
+                "Password1",
+                "Password9",
                 "12345678",
                 "987654321",
                 "Aa345678",

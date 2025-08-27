@@ -94,39 +94,39 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void isCommonPassword_returnFalse_whenPasswordIsPassword() {
+    void isCommonPassword_returnTrue_whenPasswordIsPassword() {
         //given
         String password = "PaSSworD";
 
         //when
         boolean expected = PasswordValidator.isCommonPassword(password);
-        boolean actual = false;
+        boolean actual = true;
 
         //then
         assertEquals(actual, expected);
     }
 
     @Test
-    void isCommonPassword_returnFalse_whenPasswordIsHelloooo() {
+    void isCommonPassword_returnTrue_whenPasswordIsHelloooo() {
         //given
         String password = "Halloooo";
 
         //when
         boolean expected = PasswordValidator.isCommonPassword(password);
-        boolean actual = false;
+        boolean actual = true;
 
         //then
         assertEquals(actual, expected);
     }
 
     @Test
-    void isCommonPassword_returnTrue_whenPasswordIsBla12345() {
+    void isCommonPassword_returnFalse_whenPasswordIsBla12345() {
         //given
         String password = "Bla12345";
 
         //when
         boolean expected = PasswordValidator.isCommonPassword(password);
-        boolean actual = true;
+        boolean actual = false;
 
         //then
         assertEquals(actual, expected);
