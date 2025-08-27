@@ -7,9 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class PasswordGeneratorTest {
 
     @Test
-    void generateValidPassword() {
+    void generateValidPassword_returnsTrue_whenPasswordGenerated() {
         String str = PasswordGenerator.generateValidPassword();
         boolean expected = true;
+        boolean actual = PasswordValidator.isValidPassword(str);
+        assertEquals(expected, actual);
+    }
+    @Test
+    void generateValidPassword_returnsFalse_whenPasswordGeneratedAndModified() {
+        String str = PasswordGenerator.generateValidPassword().substring(0,7);
+        boolean expected = false;
         boolean actual = PasswordValidator.isValidPassword(str);
         assertEquals(expected, actual);
     }
