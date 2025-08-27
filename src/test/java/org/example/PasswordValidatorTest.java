@@ -11,7 +11,7 @@ class PasswordValidatorTest {
     void isNotNull_returnsTrue_WhenPasswordNullOrEmptyString() {
         //given
         String password = null;
-        String passwordEmptyString = null;
+        String passwordEmptyString = "";
         //when
         //then
         assertNull(password);
