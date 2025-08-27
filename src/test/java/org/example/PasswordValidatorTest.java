@@ -40,13 +40,24 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void containsDigit() {
+    void containsDigit_returnsFalse_WhenPasswordIsHello() {
         //given
-
+        String password = "Hello";
         //when
-
+        boolean expected = PasswordValidator.containsDigit(password);
+        boolean actual = false;
         //then
-
+        assertEquals(actual, expected);
+    }
+    @Test
+    void containsDigit_returnsTrue_WhenPasswordIsHello1() {
+        //given
+        String password = "Hello1";
+        //when
+        boolean expected = PasswordValidator.containsDigit(password);
+        boolean actual = true;
+        //then
+        assertEquals(actual, expected);
     }
 
     @Test
