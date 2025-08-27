@@ -34,8 +34,8 @@ public class PasswordValidator {
                     password.charAt(i) == '9' ||
                     password.charAt(i) == '0'
             ) {
-               hasDigit = true;
-               break;
+                hasDigit = true;
+                break;
             }
         }
         return hasDigit;
@@ -68,6 +68,13 @@ public class PasswordValidator {
     }
 
     public static boolean containsSpecialChar(String password) {
+        char[] specialCharList = {'!'};
+        for (char specialChar : specialCharList) {
+
+            if (password.contains("" + specialChar)) {
+                return true;
+            }
+        }
         return false;
     }
 

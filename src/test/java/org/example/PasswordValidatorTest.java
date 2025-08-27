@@ -133,12 +133,29 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void containsSpecialChar() {
+    void containsSpecialChar_returnsTrue_whenPasswordHasSpecialChar() {
         //given
+        String password = "Bla12345!";
 
         //when
+        boolean expected = PasswordValidator.containsSpecialChar(password);
+        boolean actual = true;
 
         //then
+        assertEquals(actual, expected);
+
+    }
+    @Test
+    void containsSpecialChar_returnsFalse_whenPasswordHasNotSpecialChar() {
+        //given
+        String password = "Bla12345";
+
+        //when
+        boolean expected = PasswordValidator.containsSpecialChar(password);
+        boolean actual = false;
+
+        //then
+        assertEquals(actual, expected);
 
     }
 
