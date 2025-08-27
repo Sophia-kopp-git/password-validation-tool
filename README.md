@@ -2,6 +2,8 @@
 
 Ein einfaches, modular aufgebautes Java-Projekt zur Validierung von Passwörtern anhand konfigurierbarer Regeln.
 
+[![Java CI with Maven](https://github.com/Sophia-kopp-git/password-validation-tool/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/Sophia-kopp-git/password-validation-tool/actions/workflows/maven.yml)
+
 ## 📦 Projektstruktur
 
 
