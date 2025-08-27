@@ -39,11 +39,11 @@ public class PasswordValidator {
     public static boolean containsUpperAndLowerCase(String password) {
         if (password.toLowerCase().equals(password)) {
             return false;
-        }
-        if (password.toUpperCase().equals(password)) {
+        } else if (password.toUpperCase().equals(password)) {
             return false;
+        } else {
+            return true;
         }
-        return true;
     }
 
     public static boolean isCommonPassword(String password) {
