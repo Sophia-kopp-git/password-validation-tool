@@ -28,6 +28,7 @@ class PasswordValidatorTest {
         //then
         assertEquals(actual, expected);
     }
+
     @Test
     void hasMinLength_returnsTrue_whenPasswordIsHello123888() {
         //given
@@ -49,6 +50,7 @@ class PasswordValidatorTest {
         //then
         assertEquals(actual, expected);
     }
+
     @Test
     void containsDigit_returnsTrue_WhenPasswordIsHello1() {
         //given
@@ -145,6 +147,7 @@ class PasswordValidatorTest {
         assertEquals(actual, expected);
 
     }
+
     @Test
     void containsSpecialChar_returnsFalse_whenPasswordHasNotSpecialChar() {
         //given
@@ -160,12 +163,52 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void isValidPassword() {
+    void isValidPassword_returnsTrue_WhenPasswordIsValid() {
         //given
+        String password = "SummeR2025!";
 
         //when
+        boolean expected = PasswordValidator.isValidPassword(password);
+        boolean actual = true;
 
         //then
-
+        assertEquals(actual, expected);
     }
+    @Test
+    void isValidPassword_returnsFalse_WhenPasswordIsInValidBecauseOnlyLowerCase() {
+        //given
+        String password = "summer2025!";
+
+        //when
+        boolean expected = PasswordValidator.isValidPassword(password);
+        boolean actual = false;
+
+        //then
+        assertEquals(actual, expected);
+    }
+    @Test
+    void isValidPassword_returnsFalse_WhenPasswordIsInValidBecauseNoSpecialCharacter() {
+        //given
+        String password = "SummeR2025";
+
+        //when
+        boolean expected = PasswordValidator.isValidPassword(password);
+        boolean actual = false;
+
+        //then
+        assertEquals(actual, expected);
+    }
+    @Test
+    void isValidPassword_returnsFalse_WhenPasswordIsInValidBecauseNoNumber() {
+        //given
+        String password = "SummeR!Yeah";
+
+        //when
+        boolean expected = PasswordValidator.isValidPassword(password);
+        boolean actual = false;
+
+        //then
+        assertEquals(actual, expected);
+    }
+
 }
