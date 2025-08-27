@@ -8,7 +8,8 @@ public class PasswordValidator {
         if (hasMinLength(password) &&
                 containsDigit(password) &&
                 containsUpperAndLowerCase(password) &&
-                !isCommonPassword(password)
+                !isCommonPassword(password) &&
+                containsSpecialChar(password)
         ) {
             return true;
         } else {
