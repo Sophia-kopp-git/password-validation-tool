@@ -7,14 +7,20 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Hi, please enter your password here");
-        //String password = scanner.next();
-        String password = "Bla23402888";
-        if (PasswordValidator.isValidPassword(password)) {
-            System.out.println("Your password is valid!");
-        } else {
-            System.out.println("Your password is invalid! Chose another one");
-        }
+        boolean validPassword = false;
 
+        System.out.println("Hi there!");
+        while (!validPassword) {
+            System.out.println("Please enter your password here: ");
+            String password = scanner.next();
+
+
+            if (PasswordValidator.isValidPassword(password)) {
+                System.out.println("Your password is valid!");
+                validPassword = true;
+            } else {
+                System.out.println("Your password is invalid! Chose another one");
+            }
+        }
     }
 }
