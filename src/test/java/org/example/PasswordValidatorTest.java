@@ -19,13 +19,24 @@ class PasswordValidatorTest {
     }
 
     @Test
-    void hasMinLength() {
+    void hasMinLength_returnsFalse_whenPasswordIsHello() {
         //given
-
+        String password = "Hello";
         //when
-
+        boolean expected = PasswordValidator.hasMinLength(password);
+        boolean actual = false;
         //then
-
+        assertEquals(actual, expected);
+    }
+    @Test
+    void hasMinLength_returnsTrue_whenPasswordIsHello123888() {
+        //given
+        String password = "Hello123888";
+        //when
+        boolean expected = PasswordValidator.hasMinLength(password);
+        boolean actual = true;
+        //then
+        assertEquals(actual, expected);
     }
 
     @Test
