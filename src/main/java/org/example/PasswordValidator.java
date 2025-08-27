@@ -2,12 +2,13 @@ package org.example;
 
 public class PasswordValidator {
     public static boolean isValidPassword(String password){
-        if (password == null || password == ""){
+        if (password == null || password.equals("")){
             return false;
         }
         if (hasMinLength(password) &&
         containsDigit(password) &&
-        containsUpperAndLowerCase(password)
+        containsUpperAndLowerCase(password) &&
+        isCommonPassword(password)
         ) {
          return true;
         }
@@ -45,7 +46,19 @@ public class PasswordValidator {
         return true;
     }
         public static boolean isCommonPassword(String password){
-            return false;
+            String[] commonPasswordList= {"password",
+                    "Passwort1",
+                    "Passwort9",
+                    "12345678",
+                    "987654321",
+                    "Aa345678",
+                    "Halloooo"};
+            for (String word : commonPasswordList){
+                if (word.equalsIgnoreCase(password)){
+                    return false;
+                }
+            }
+            return true;
         }
         public static boolean containsSpecialChar(String password){
             return false;
