@@ -48,6 +48,7 @@ class PasswordValidatorTest {
         //then
         assertEquals(actual, expected);
     }
+
     @Test
     void containsUpperAndLowerCase_returnsFalse_WhenPasswordHasOnlyLowerCaseLetter() {
         //given
@@ -58,6 +59,7 @@ class PasswordValidatorTest {
         //then
         assertEquals(actual, expected);
     }
+
     @Test
     void containsUpperAndLowerCase_returnsFalse_WhenPasswordHasOnlyUpperCaseLetter() {
         //given
@@ -81,6 +83,7 @@ class PasswordValidatorTest {
         //then
         assertEquals(actual, expected);
     }
+
     @Test
     void isCommonPassword_returnFalse_whenPasswordIsHelloooo() {
         //given
@@ -93,6 +96,7 @@ class PasswordValidatorTest {
         //then
         assertEquals(actual, expected);
     }
+
     @Test
     void isCommonPassword_returnTrue_whenPasswordIsBla12345() {
         //given

@@ -9,7 +9,7 @@ public class Main {
 
         System.out.println("Hi, please enter your password here");
         String password = scanner.next();
-        if (PasswordValidator.isValidPassword(password)){
+        if (PasswordValidator.isValidPassword(password)) {
             System.out.println("Your password is valid!");
         }
 
